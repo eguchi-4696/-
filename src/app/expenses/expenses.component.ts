@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EXPENSESLIST } from '../mock-expenses';
+import { Expenses } from '../expenses';
+import { ExpensesService } from '../expenses.service';
 
 @Component({
   selector: 'app-expenses',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expenses.component.css'],
 })
 export class ExpensesComponent implements OnInit {
-  sectionDate: Date;
-  item: any[];
+  expensesList = EXPENSESLIST;
+  selectedExpenses?: Expenses;
 
-  constructor() {}
+  constructor(private expensesService: ExpensesService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getExpenses();
+  }
+
+  getExpenses() {
+    this.expensesService
+      .getExpenses()
+      .subscribe((expensesList) => (this.expensesList = expensesList));
+  }
+
+  onSelect(expenses: Expenses): void {
+    this.selectedExpenses = expenses;
+  }
 }

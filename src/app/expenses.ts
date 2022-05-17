@@ -1,5 +1,6 @@
-export interface Expenses {
-  sectionDate: Date;
-  itemName: string;
-  itemCost: number;
+import { Item } from './item';
+
+export class Expenses {
+  sectionDate: string;
+  item: Item;
 }
