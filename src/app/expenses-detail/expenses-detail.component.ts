@@ -6,17 +6,12 @@ import { ExpensesComponent } from '../expenses/expenses.component';
   templateUrl: './expenses-detail.component.html',
   styleUrls: ['./expenses-detail.component.css'],
 })
-export class ExpensesDetailComponent
-  extends ExpensesComponent
-  implements OnInit
-{
+export class ExpensesDetailComponent implements OnInit {
   date: Date;
   name: string;
   cost: number;
 
-  constructor() {
-    super();
-  }
+  constructor() {}
 
   ngOnInit() {}
 }
