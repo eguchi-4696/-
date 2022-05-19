@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpensesEditComponent } from './expenses-edit/expenses-edit.component';
 import { ExpensesDetailComponent } from './expenses-detail/expenses-detail.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -23,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     ExpensesComponent,
     ExpensesEditComponent,
     ExpensesDetailComponent,
-    HttpClientModule,
   ],
   bootstrap: [AppComponent],
 })
